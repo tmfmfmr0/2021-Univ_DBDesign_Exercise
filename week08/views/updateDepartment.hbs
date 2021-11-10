@@ -1,0 +1,22 @@
+<h1>{{ title }}</h1>	<!-- 부서 테이블 -->
+<table>
+	<tr>					<!-- tr: 행 하나 -->
+		<td>dname</td>			<!-- td: 열 하나 -->
+		<td>dnumber</td>
+		<td>mgrssn</td>
+		<td>mgrstartdate</td>
+	</tr>
+	{{#each dept_res}}	<!-- 넘겨지는 데이터마다 한 행씩 추가 -->
+		<form method="post">	<!-- 폼 형식으로 -->
+			<tr>
+				<!-- input tag를 사용하여 입력 가능한 형태로 변경 -->
+				<td><input type="text" name="dname" placeholder="{{dname}}"></td>
+				<td>{{dnumber}}</td>
+				<td>{{mgrssn}}</td>
+				<td>{{mgrstartdate}}</td>
+				<!-- 폼에서 action 대신 안에서 formaction 사용. 입력 데이터 넘겨줌 -->
+				<td><input type="submit" value="수정" formaction="/update/department"></td>
+			</tr>
+		</form>
+	{{/each}}
+</table>

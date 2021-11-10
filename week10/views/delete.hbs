@@ -1,0 +1,57 @@
+{{!-- <h1>{{ title }}</h1>	<!-- 테이블 -->
+
+<table>
+	<tr>					<!-- tr: 행 하나 -->
+		<td>Dname</td>			<!-- td: 열 하나 -->
+		<td>Dnumber</td>
+	</tr>
+	{{#each department}}	<!-- 넘겨지는 데이터마다 한 행씩 추가 -->
+	<form method="post">	<!-- 폼 형식으로 -->
+		<tr>
+			<!-- input tag를 사용하여 입력 가능한 형태로 변경 -->
+			<td>{{Dname}}</td>
+			<td>{{Dnumber}}</td>
+			<!-- 폼에서 action 대신 안에서 formaction 사용. 입력 데이터 넘겨줌 -->
+			<td style="border: none; margin-left: 10px;">
+				<button 
+					style="margin-left: 10px;"
+					type="submit" 
+					name="delBtn"
+					value={{Dnumber}} 
+					formaction="/delete">	<!-- delete페이지로 -->
+					삭제
+				</button>
+			</td>
+		</tr>
+	</form>
+	{{/each}}
+</table> --}}
+
+<h1>{{ title }}</h1>	<!-- 테이블 -->
+
+<table>
+	<tr>					<!-- tr: 행 하나 -->
+		<td>ItemName</td>			<!-- td: 열 하나 -->
+		<td>ItemNumber</td>
+	</tr>
+	{{#each item}}	<!-- 넘겨지는 데이터마다 한 행씩 추가 -->
+	<form method="post">	<!-- 폼 형식으로 -->
+		<tr>
+			<!-- input tag를 사용하여 입력 가능한 형태로 변경 -->
+			<td>{{ItemName}}</td>
+			<td>{{ItemNumber}}</td>
+			<!-- 폼에서 action 대신 안에서 formaction 사용. 입력 데이터 넘겨줌 -->
+			<td style="border: none; margin-left: 10px;">
+				<button 
+					style="margin-left: 10px;"
+					type="submit" 
+					name="delBtn"
+					value={{ItemName}} 
+					formaction="/delete">	<!-- delete페이지로 -->
+					삭제
+				</button>
+			</td>
+		</tr>
+	</form>
+	{{/each}}
+</table>

@@ -1,0 +1,29 @@
+{{!-- <h1>{{ title }}</h1>		<!-- 테이블 -->
+
+<table>
+	<tr>
+		<td>Dname</td>
+		<td>Dnumber</td>
+	</tr>
+	{{#each department}}	<!-- 넘겨지는 데이터마다 -->
+	<tr>
+		<td>{{Dname}}</td>
+		<td>{{Dnumber}}</td>
+	</tr>
+	{{/each}}
+</table> --}}
+
+<h1>{{ title }}</h1>		<!-- 테이블 -->
+
+<table>
+	<tr>
+		<td>ItemName</td>
+		<td>ItemNumber</td>
+	</tr>
+	{{#each item}}	<!-- 넘겨지는 데이터마다 -->
+	<tr>
+		<td>{{ItemName}}</td>
+		<td>{{ItemNumber}}</td>
+	</tr>
+	{{/each}}
+</table>

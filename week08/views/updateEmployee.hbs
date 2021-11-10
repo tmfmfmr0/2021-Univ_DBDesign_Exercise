@@ -1,0 +1,33 @@
+<h1>{{ title }}</h1>	<!-- 직원 테이블 -->
+<table>					
+	<tr>				<!-- tr: 행 하나 -->
+		<td>fname</td>		<!-- td: 열 하나 -->
+		<td>minit</td>
+		<td>lname</td>
+		<td>ssn</td>
+		<td>bdate</td>
+		<td>address</td>
+		<td>sex</td>
+		<td>salary</td>
+		<td>superssn</td>
+		<td>dno</td>
+	</tr>
+	{{#each emp_res}}	<!-- 넘겨지는 데이터마다 한 행씩 추가 -->
+		<form method="post" action='/update/employee'>	<!-- 폼 사용. action으로 입력 데이터 넘겨줌 -->
+			<tr>
+				<td>{{fname}}</td>
+				<td>{{minit}}</td>
+				<td>{{lname}}</td>
+				<td>{{ssn}}</td>
+				<td>{{bdate}}</td>
+				<td>{{address}}</td>
+				<td>{{sex}}</td>
+				<!-- input tag를 사용하여 입력 가능한 형태로 변경 -->
+				<td><input type="text" name="salary" placeholder="{{salary}}>"</td>
+				<td>{{superssn}}</td>
+				<td>{{dno}}</td>
+				<td><input type="submit" value="수정"></td>
+			</tr>
+		</form>
+	{{/each}}
+</table>
